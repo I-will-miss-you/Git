@@ -154,7 +154,7 @@ git reset hard 1e9403fecd9d41ea60b361e3d0479e5e5f21b385
  
  ## GitHub
  ### Enviar mudanças para repositório remoto
->[git-push](https://git-scm.com/docs/git-push) - Update remote refs along with associated objects
+>[__git-push__](https://git-scm.com/docs/git-push) - Update remote refs along with associated objects
 ```sh 
 git commit -am "mensagem" 
 # depois
@@ -163,9 +163,99 @@ git push origin master
 
 
 ### Clone de repositório
->[git-clone](https://git-scm.com/docs/git-clone) - Clone a repository into a new directory
+>[__git-clone__](https://git-scm.com/docs/git-clone) - Clone a repository into a new directory
 ```sh
-git clone host@host nome_arquivo
+git clone https://host.git nome_arquivo
 # exemplo:
+git clone https://github.com/code36u4r60/Git.git Cursos_Git
+```
 
+### Fork do repositório
+> é so clicar no botão :)
+
+## BRANCH
+>[__git-branch__](https://git-scm.com/docs/git-branch) - List, create, or delete branches
+
+### Criar
+> Criar um "_branch_"
+```sh
+git checkout -b nome_new_brache
+```
+> Saber quais são os _branchs_ existentes. O _breach_ selecionado fica referenciado com um __*__
+```sh
+git branch
+```
+
+### Mudar e apagar _branchs_
+
+> Mudar de _branch_
+```sh
+git checkout nome_branch_destino
+```
+> Apagar um _branch_
+```sh
+git branch -D nome_branch_para_apagar
+```
+
+## Merge
+> [__git-merge__](https://git-scm.com/docs/git-merge) - Join two or more development histories together
+
+
+## Rebase
+> [__git-rebase__](https://git-scm.com/docs/git-rebase) - Reapply commits on top of another base tip
+
+## Stash
+> [__git-stash__](https://git-scm.com/docs/git-stash) - Stash the changes in a dirty working directory away     
+> permite deixar um tarefa em working-progress e criar um _branch_.      
+> para isso basta usar: 
+```sh
+git stash
+# para voltar 
+git stash apply
+# para ver a lista de _git-stash's_ 
+git stash list
+# para apagar todos os _git-stash's_
+git stash clear
+```
+
+## Git Aliases - atalhos
+[__Git Aliases__](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
+```sh
+# exemplos
+git config --global alias.s status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+```
+
+## Versionando com Tags
+[__git-tag__](https://git-scm.com/docs/git-tag) - Create, list, delete or verify a tag object signed with GPG
+```sh
+git commit -am "messagem"
+
+git push origin master
+
+# Criar uma tag para esta alteração
+git tag -a 1.0.0 -m "mensagem"
+
+# Saber as tag's criadas
+git tag
+
+# Subir a nova tag
+git push origin master --tags
+```
+## Revert
+[__git-revert__](https://git-scm.com/docs/git-revert) - Revert some existing commits
+```sh
+git revert id_commit_que_deu_problema
+```
+
+## Apagando tags e branches remotos
+```sh
+
+# apagar no local
+git tag -d nome_tag
+
+# apagar as do repositório
+git push origin :nome_tag
 ```
